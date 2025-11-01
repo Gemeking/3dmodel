@@ -1,5 +1,4 @@
 export const riddlesEnglish = [
-  { riddle: "When you turn its head, it cries.", answer: "faucet" },
   { riddle: "Black crocodile.", answer: "asphalt" },
   { riddle: "It comes out of its mother's belly and beats its mother.", answer: "butter" },
   { riddle: "Door without a house.", answer: "mouth" },
