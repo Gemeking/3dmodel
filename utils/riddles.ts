@@ -52,7 +52,6 @@ export const riddlesEnglish = [
 ];
 
 export const riddlesAmharic = [
-  { riddle: "ጭንቅላቱን ሲያዞሩት የሚያለቅስ።", answer: "ቧንቧ" },
   { riddle: "ቲኩር አዞ።", answer: "አስፋልት" },
   { riddle: "ከእናቱ ሆድ ወጥታ እናቱን የምትመታ።", answer: "ቅቤ" },
   { riddle: "ቤት የሌለው ደጅ።", answer: "አፍ" },
