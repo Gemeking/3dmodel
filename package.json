@@ -9,12 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.0.1",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "framer-motion": "^12.23.24",
+    "howler": "^2.2.4",
+    "next": "^16.0.2-canary.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/howler": "^2.2.12",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -22,7 +27,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.14",
+    "tailwindcss": "^3.4.18",
     "typescript": "^5"
   }
 }

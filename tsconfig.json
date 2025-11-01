@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "components/Game.js", "pages/index.tsx"  ],
   "exclude": ["node_modules"]
 }

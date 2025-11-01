@@ -1,0 +1,235 @@
+/* Home.module.css */
+.mainContainer {
+  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, #3a2618 0%, #5d4037 25%, #4e342e 50%, #3e2723 75%, #2c1810 100%),
+    radial-gradient(circle at 20% 80%, #6d4c41 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, #4e342e 0%, transparent 50%);
+  background-size: 400% 400%, 200% 200%, 200% 200%;
+  animation: coffeeSteam 20s ease infinite;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.mainContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,20 Q40,10 60,20 T100,20' stroke='%235d4037' stroke-width='2' fill='none' opacity='0.1'/%3E%3Cpath d='M10,40 Q30,30 50,40 T90,40' stroke='%234e342e' stroke-width='2' fill='none' opacity='0.1'/%3E%3Cpath d='M30,60 Q50,50 70,60 T100,60' stroke='%236d4c41' stroke-width='2' fill='none' opacity='0.1'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 30% 30%, #8d6e63 0%, transparent 70%),
+    radial-gradient(circle at 70% 70%, #5d4037 0%, transparent 70%);
+  background-size: 200px 200px, 300px 300px, 400px 400px;
+  opacity: 0.4;
+}
+
+@keyframes coffeeSteam {
+  0% { background-position: 0% 50%, 0% 0%, 100% 100%; }
+  50% { background-position: 100% 50%, 100% 100%, 0% 0%; }
+  100% { background-position: 0% 50%, 0% 0%, 100% 100%; }
+}
+
+.riddleWrapper {
+  background: 
+    linear-gradient(145deg, #5d4037, #4e342e),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233e2723' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 15px;
+  padding: 50px 40px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.6),
+    0 0 0 2px #8d6e63,
+    0 0 0 6px #5d4037,
+    0 0 0 10px #3e2723,
+    inset 0 0 30px rgba(0, 0, 0, 0.4);
+  max-width: 650px;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+  border: 1px solid #a1887f;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.riddleWrapper::before {
+  content: '☕';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  color: #d7ccc8;
+  background: #5d4037;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  border: 2px solid #8d6e63;
+}
+
+.riddleWrapper::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(169, 120, 103, 0.3);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.scoreContainer {
+  background: linear-gradient(145deg, #6d4c41, #4e342e);
+  padding: 18px 35px;
+  border-radius: 25px;
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 3px #8d6e63,
+    0 0 0 6px #5d4037;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+  border: 2px solid #a1887f;
+  font-weight: bold;
+}
+
+.scoreContainer::before {
+  content: '🏆';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: #5d4037;
+  padding: 8px;
+  border-radius: 50%;
+  border: 2px solid #d7ccc8;
+}
+
+.scoreContainer::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px solid rgba(215, 204, 200, 0.3);
+  border-radius: 25px;
+  pointer-events: none;
+}
+
+.languageContainer {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 10;
+  background: linear-gradient(145deg, #5d4037, #4e342e);
+  padding: 12px;
+  border-radius: 15px;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.4),
+    0 0 0 2px #8d6e63;
+  border: 1px solid #a1887f;
+}
+
+/* Coffee bean decoration */
+.mainContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,10 Q25,5 30,10 T40,10 Q35,15 30,10 T20,10' fill='%233e2723' opacity='0.1'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15,8 Q18,5 21,8 T28,8 Q23,12 21,8 T15,8' fill='%235d4037' opacity='0.1'/%3E%3C/svg%3E");
+  background-size: 40px 40px, 30px 30px;
+  background-position: 10% 20%, 80% 70%;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 15px;
+  }
+  
+  .riddleWrapper {
+    padding: 35px 25px;
+    margin-bottom: 30px;
+  }
+  
+  .riddleWrapper::before {
+    font-size: 32px;
+    top: -20px;
+    padding: 8px 16px;
+  }
+  
+  .scoreContainer {
+    padding: 15px 28px;
+    margin-bottom: 20px;
+  }
+  
+  .scoreContainer::before {
+    font-size: 20px;
+    left: -12px;
+    padding: 6px;
+  }
+  
+  .languageContainer {
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .riddleWrapper {
+    padding: 25px 20px;
+  }
+  
+  .scoreContainer {
+    padding: 12px 22px;
+  }
+  
+  .languageContainer {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Sharp corners variation */
+.riddleWrapper.sharp {
+  border-radius: 5px;
+}
+
+.scoreContainer.sharp {
+  border-radius: 10px;
+}
+
+.languageContainer.sharp {
+  border-radius: 5px;
+}
+
+/* Traditional Ethiopian pattern overlay */
+.ethiopianPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,20 L40,40 L20,60 L40,80 L60,60 L80,80 L60,40 L80,20 L60,20 L40,40 L20,20' fill='none' stroke='%238d6e63' stroke-width='1' opacity='0.1'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 1;
+}

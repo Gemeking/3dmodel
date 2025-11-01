@@ -1,0 +1,447 @@
+/* InsultOverlay.module.css */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 18, 11, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.popupContainer {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 1001;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.7),
+    0 0 0 3px #8d6e63,
+    0 0 0 6px #5d4037,
+    0 0 0 9px #3e2723,
+    inset 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 450px;
+  width: 85vw;
+  background: linear-gradient(145deg, #4e342e, #3e2723);
+  border: 2px solid #a1887f;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ethiopianImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+.insultOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(93, 64, 55, 0.95) 0%,
+    rgba(78, 52, 46, 0.92) 50%,
+    rgba(62, 39, 35, 0.95) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.popupText {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #d7ccc8;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.7),
+    4px 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  line-height: 1.4;
+  background: rgba(42, 27, 21, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(169, 120, 103, 0.4);
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popupClose {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.2em;
+  color: #d7ccc8;
+  cursor: pointer;
+  z-index: 1002;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+  background: rgba(62, 39, 35, 0.8);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #8d6e63;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.popupClose:hover {
+  transform: scale(1.1);
+  background: rgba(141, 110, 99, 0.9);
+  color: #efebe9;
+}
+
+.popupExplode {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #d7ccc8;
+  text-shadow: 
+    3px 3px 0px #5d4037,
+    6px 6px 8px rgba(0, 0, 0, 0.6);
+  z-index: 1003;
+  pointer-events: none;
+  background: rgba(62, 39, 35, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #8d6e63;
+}
+
+.retryBtn {
+  background: linear-gradient(145deg, #6d4c41, #5d4037);
+  color: #efebe9;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    0 0 0 2px #8d6e63,
+    0 0 0 4px #5d4037;
+  margin-top: 20px;
+  z-index: 1002;
+  position: relative;
+  border: 1px solid #a1887f;
+}
+
+.retryBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 12px 25px rgba(0, 0, 0, 0.6),
+    0 0 0 2px #a1887f,
+    0 0 0 4px #8d6e63;
+  background: linear-gradient(145deg, #5d4037, #6d4c41);
+  color: #ffffff;
+}
+
+.retryBtn:active {
+  transform: translateY(1px) scale(1);
+}
+
+.ethiopianFlagBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid;
+  border-image: linear-gradient(45deg, #8d6e63, #5d4037, #4e342e, #3e2723) 1;
+  border-radius: 15px;
+  pointer-events: none;
+  z-index: 1002;
+}
+
+/* Coffee-themed decoration */
+.coffeeBeans {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5em;
+  color: #5d4037;
+  opacity: 0.6;
+  z-index: 1002;
+}
+
+/* Animation for image transition */
+.imageTransition {
+  animation: imageFade 0.5s ease-in-out;
+}
+
+@keyframes imageFade {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Amharic Text Styling */
+.amharicText {
+  font-family: 'Nyala', 'Abyssinica SIL', 'Kefa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.6em;
+  direction: rtl;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  color: #d7ccc8;
+}
+
+/* Mobile Responsive - Left Top Position */
+@media (max-width: 768px) {
+  .popupContainer {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: auto;
+    transform: none;
+    max-width: none;
+    width: calc(100vw - 40px);
+    height: auto;
+    max-height: 70vh;
+    border-radius: 12px;
+  }
+  
+  .imageContainer {
+    height: 300px;
+    min-height: 250px;
+    border-radius: 10px;
+  }
+  
+  .popupText {
+    font-size: 1.3em;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .amharicText {
+    font-size: 1.2em;
+  }
+  
+  .popupClose {
+    font-size: 1.8em;
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 15px;
+  }
+  
+  .retryBtn {
+    padding: 12px 30px;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  
+  .popupExplode {
+    font-size: 2.5em;
+    padding: 15px;
+  }
+  
+  .insultOverlay {
+    padding: 20px 15px;
+  }
+  
+  .ethiopianFlagBorder {
+    border-width: 3px;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  .popupContainer {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    width: calc(100vw - 30px);
+    max-height: 65vh;
+  }
+  
+  .imageContainer {
+    height: 250px;
+    min-height: 200px;
+  }
+  
+  .popupText {
+    font-size: 1.1em;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .amharicText {
+    font-size: 1em;
+  }
+  
+  .popupClose {
+    font-size: 1.6em;
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    right: 12px;
+  }
+  
+  .retryBtn {
+    padding: 10px 25px;
+    font-size: 0.9em;
+    margin-top: 8px;
+  }
+  
+  .popupExplode {
+    font-size: 2em;
+    padding: 12px;
+  }
+  
+  .insultOverlay {
+    padding: 15px 12px;
+  }
+}
+
+/* Extra Small Mobile (Galaxy Fold, etc.) */
+@media (max-width: 360px) {
+  .popupContainer {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    width: calc(100vw - 20px);
+    max-height: 60vh;
+  }
+  
+  .imageContainer {
+    height: 200px;
+    min-height: 180px;
+  }
+  
+  .popupText {
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .amharicText {
+    font-size: 0.9em;
+  }
+  
+  .retryBtn {
+    padding: 8px 20px;
+    font-size: 0.8em;
+  }
+  
+  .popupClose {
+    font-size: 1.4em;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .popupContainer {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    max-height: 85vh;
+  }
+  
+  .imageContainer {
+    height: 200px;
+  }
+  
+  .popupText {
+    font-size: 1.1em;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .amharicText {
+    font-size: 1em;
+  }
+  
+  .retryBtn {
+    padding: 8px 20px;
+    font-size: 0.9em;
+  }
+}
+
+/* Large Desktop Screens */
+@media (min-width: 1440px) {
+  .popupContainer {
+    left: 50px;
+    max-width: 500px;
+  }
+  
+  .imageContainer {
+    height: 550px;
+  }
+  
+  .popupText {
+    font-size: 2em;
+  }
+  
+  .amharicText {
+    font-size: 1.8em;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .popupClose:hover {
+    transform: none;
+  }
+  
+  .retryBtn:hover {
+    transform: none;
+  }
+  
+  .popupClose:active,
+  .retryBtn:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Coffee steam animation */
+@keyframes coffeeSteam {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-10px) scale(1.1); opacity: 1; }
+  100% { transform: translateY(-20px) scale(1.2); opacity: 0; }
+}
+
+.coffeeSteam {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  animation: coffeeSteam 2s ease-in-out infinite;
+  color: #d7ccc8;
+  opacity: 0;
+}

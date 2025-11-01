@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: { turbo: true },
+  turbopack: { root: __dirname }, // force root to current folder
 };
 
-export default nextConfig;
+module.exports = nextConfig;
